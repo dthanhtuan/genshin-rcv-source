@@ -15,6 +15,7 @@ import subprocess
 import sys
 import io
 import wave
+from fairseq.data.dictionary import Dictionary
 from datetime import datetime
 from fairseq import checkpoint_utils
 from lib.infer_pack.models import (
@@ -133,7 +134,8 @@ def load_model():
             model_author = info.get("author", None)
             model_cover = f"weights/{category_folder}/{character_name}/{info['cover']}"
             model_index = f"weights/{category_folder}/{character_name}/{info['feature_retrieval_library']}"
-            cpt = torch.load(f"weights/{category_folder}/{character_name}/{model_name}", map_location="cpu")
+            with torch.serialization.safe_globals([Dictionary]):
+                cpt = torch.load(f"weights/{category_folder}/{character_name}/{model_name}", map_location=torch.device("cpu"), weights_only=True)
             tgt_sr = cpt["config"][-1]
             cpt["config"][-3] = cpt["weight"]["emb_g.weight"].shape[0]  # n_spk
             if_f0 = cpt.get("f0", 1)
@@ -215,10 +217,11 @@ def combine_vocal_and_inst(audio_data, audio_volume, split_model):
 
 def load_hubert():
     global hubert_model
-    models, _, _ = checkpoint_utils.load_model_ensemble_and_task(
-        ["hubert_base.pt"],
-        suffix="",
-    )
+    with torch.serialization.safe_globals([Dictionary]):
+        models, _, _ = checkpoint_utils.load_model_ensemble_and_task(
+            ["hubert_base.pt"],
+            suffix="",
+        )
     hubert_model = models[0]
     hubert_model = hubert_model.to(config.device)
     if config.is_half:
@@ -230,115 +233,100 @@ def load_hubert():
 def change_audio_mode(vc_audio_mode):
     if vc_audio_mode == "Input path":
         return (
-            # Input & Upload
-            gr.Textbox.update(visible=True),
-            gr.Checkbox.update(visible=False),
-            gr.Audio.update(visible=False),
-            # Youtube
-            gr.Dropdown.update(visible=False),
-            gr.Textbox.update(visible=False),
-            gr.Dropdown.update(visible=False),
-            gr.Button.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Slider.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Button.update(visible=False),
-            # TTS
-            gr.Textbox.update(visible=False),
-            gr.Dropdown.update(visible=False)
+            gr.Textbox(visible=True),
+            gr.Checkbox(visible=False),
+            gr.Audio(visible=False),
+            gr.Dropdown(visible=False),
+            gr.Textbox(visible=False),
+            gr.Dropdown(visible=False),
+            gr.Button(visible=False),
+            gr.Audio(visible=False),
+            gr.Audio(visible=False),
+            gr.Audio(visible=False),
+            gr.Slider(visible=False),
+            gr.Audio(visible=False),
+            gr.Button(visible=False),
+            gr.Textbox(visible=False),
+            gr.Dropdown(visible=False)
         )
     elif vc_audio_mode == "Upload audio":
         return (
-            # Input & Upload
-            gr.Textbox.update(visible=False),
-            gr.Checkbox.update(visible=True),
-            gr.Audio.update(visible=True),
-            # Youtube
-            gr.Dropdown.update(visible=False),
-            gr.Textbox.update(visible=False),
-            gr.Dropdown.update(visible=False),
-            gr.Button.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Slider.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Button.update(visible=False),
-            # TTS
-            gr.Textbox.update(visible=False),
-            gr.Dropdown.update(visible=False)
+            gr.Textbox(visible=False),
+            gr.Checkbox(visible=True),
+            gr.Audio(visible=True),
+            gr.Dropdown(visible=False),
+            gr.Textbox(visible=False),
+            gr.Dropdown(visible=False),
+            gr.Button(visible=False),
+            gr.Audio(visible=False),
+            gr.Audio(visible=False),
+            gr.Audio(visible=False),
+            gr.Slider(visible=False),
+            gr.Audio(visible=False),
+            gr.Button(visible=False),
+            gr.Textbox(visible=False),
+            gr.Dropdown(visible=False)
         )
     elif vc_audio_mode == "Youtube":
         return (
-            # Input & Upload
-            gr.Textbox.update(visible=False),
-            gr.Checkbox.update(visible=False),
-            gr.Audio.update(visible=False),
-            # Youtube
-            gr.Dropdown.update(visible=True),
-            gr.Textbox.update(visible=True),
-            gr.Dropdown.update(visible=True),
-            gr.Button.update(visible=True),
-            gr.Audio.update(visible=True),
-            gr.Audio.update(visible=True),
-            gr.Audio.update(visible=True),
-            gr.Slider.update(visible=True),
-            gr.Audio.update(visible=True),
-            gr.Button.update(visible=True),
-            # TTS
-            gr.Textbox.update(visible=False),
-            gr.Dropdown.update(visible=False)
+            gr.Textbox(visible=False),
+            gr.Checkbox(visible=False),
+            gr.Audio(visible=False),
+            gr.Dropdown(visible=True),
+            gr.Textbox(visible=True),
+            gr.Dropdown(visible=True),
+            gr.Button(visible=True),
+            gr.Audio(visible=True),
+            gr.Audio(visible=True),
+            gr.Audio(visible=True),
+            gr.Slider(visible=True),
+            gr.Audio(visible=True),
+            gr.Button(visible=True),
+            gr.Textbox(visible=False),
+            gr.Dropdown(visible=False)
         )
     elif vc_audio_mode == "TTS Audio":
         return (
-            # Input & Upload
-            gr.Textbox.update(visible=False),
-            gr.Checkbox.update(visible=False),
-            gr.Audio.update(visible=False),
-            # Youtube
-            gr.Dropdown.update(visible=False),
-            gr.Textbox.update(visible=False),
-            gr.Dropdown.update(visible=False),
-            gr.Button.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Slider.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Button.update(visible=False),
-            # TTS
-            gr.Textbox.update(visible=True),
-            gr.Dropdown.update(visible=True)
+            gr.Textbox(visible=False),
+            gr.Checkbox(visible=False),
+            gr.Audio(visible=False),
+            gr.Dropdown(visible=False),
+            gr.Textbox(visible=False),
+            gr.Dropdown(visible=False),
+            gr.Button(visible=False),
+            gr.Audio(visible=False),
+            gr.Audio(visible=False),
+            gr.Audio(visible=False),
+            gr.Slider(visible=False),
+            gr.Audio(visible=False),
+            gr.Button(visible=False),
+            gr.Textbox(visible=True),
+            gr.Dropdown(visible=True)
         )
     else:
         return (
-            # Input & Upload
-            gr.Textbox.update(visible=False),
-            gr.Checkbox.update(visible=True),
-            gr.Audio.update(visible=True),
-            # Youtube
-            gr.Dropdown.update(visible=False),
-            gr.Textbox.update(visible=False),
-            gr.Dropdown.update(visible=False),
-            gr.Button.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Slider.update(visible=False),
-            gr.Audio.update(visible=False),
-            gr.Button.update(visible=False),
-            # TTS
-            gr.Textbox.update(visible=False),
-            gr.Dropdown.update(visible=False)
+            gr.Textbox(visible=False),
+            gr.Checkbox(visible=True),
+            gr.Audio(visible=True),
+            gr.Dropdown(visible=False),
+            gr.Textbox(visible=False),
+            gr.Dropdown(visible=False),
+            gr.Button(visible=False),
+            gr.Audio(visible=False),
+            gr.Audio(visible=False),
+            gr.Audio(visible=False),
+            gr.Slider(visible=False),
+            gr.Audio(visible=False),
+            gr.Button(visible=False),
+            gr.Textbox(visible=False),
+            gr.Dropdown(visible=False)
         )
 
 def use_microphone(microphone):
-    if microphone == True:
-        return gr.Audio.update(source="microphone")
+    if microphone:
+        return gr.Audio(source="microphone")
     else:
-        return gr.Audio.update(source="upload")
+        return gr.Audio(source="upload")
 
 if __name__ == '__main__':
     load_hubert()
