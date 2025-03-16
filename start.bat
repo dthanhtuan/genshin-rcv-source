@@ -11,7 +11,8 @@ rem Create virtual environment (.venv)
 python -m venv .venv
 
 rem Activate virtual environment
-.venv\Scripts\activate
+source .venv/bin/activate
+
 
 rem Check for Nvidia GPU using nvidia-smi
 nvidia-smi > NUL 2>&1
