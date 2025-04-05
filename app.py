@@ -26,6 +26,10 @@ from lib.infer_pack.models import (
 )
 from vc_infer_pipeline import VC
 from config import Config
+
+
+os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'
+
 config = Config()
 logging.getLogger("numba").setLevel(logging.WARNING)
 limitation = os.getenv("SYSTEM") == "spaces"
