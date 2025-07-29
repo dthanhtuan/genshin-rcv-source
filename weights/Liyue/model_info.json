@@ -1,0 +1,26 @@
+{
+  "ganyu-jp": {
+    "enable": true,
+    "model_path": "ganyu-jp.pth",
+    "title": "Ganyu",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF1636_Flat_nprobe_1.index",
+    "author": "ArkanDash"
+  },
+  "hutao-jp": {
+    "enable": false,
+    "model_path": "hutao-jp.pth",
+    "title": "Hutao",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF1662_Flat_nprobe_1.index",
+    "author": "ArkanDash"
+  },
+  "ningguang-jp": {
+    "enable": false,
+    "model_path": "ningguang-jp.pth",
+    "title": "Ningguang",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF4255_Flat_nprobe_1_ningguang-jp_v2.index",
+    "author": "ArkanDash"
+  }
+}

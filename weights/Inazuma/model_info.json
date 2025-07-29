@@ -1,0 +1,58 @@
+{
+  "ayaka-jp": {
+    "enable": true,
+    "model_path": "ayaka-jp.pth",
+    "title": "Kamisato Ayaka - 101 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF4031_Flat_nprobe_1_ayaka-jp_v2.index",
+    "author": "ArkanDash"
+  },
+  "ayato-jp": {
+    "enable": false,
+    "model_path": "ayato-jp.pth",
+    "title": "Kamisato Ayato - 100 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF1304_Flat_nprobe_1.index",
+    "author": "ArkanDash"
+  },
+  "yaemiko-jp": {
+    "enable": false,
+    "model_path": "yaemiko-jp.pth",
+    "title": "Yae Miko - 100 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF2765_Flat_nprobe_1.index",
+    "author": "ArkanDash"
+  },
+  "yoimiya-jp": {
+    "enable": false,
+    "model_path": "yoimiya-jp.pth",
+    "title": "Yoimiya - 100 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF2034_Flat_nprobe_1.index",
+    "author": "ArkanDash"
+  },
+  "kazuha-jp": {
+    "enable": false,
+    "model_path": "kazuha-jp.pth",
+    "title": "kazuha - 100 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF4185_Flat_nprobe_1_kazuha-jp_v2.index",
+    "author": "ArkanDash"
+  },
+  "raiden-jp": {
+    "enable": false,
+    "model_path": "raiden-jp.pth",
+    "title": "Raiden Shogun - 104 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF4261_Flat_nprobe_1_raiden-jp_v2.index",
+    "author": "ArkanDash"
+  },
+  "kokomi-jp": {
+    "enable": false,
+    "model_path": "kokomi-jp.pth",
+    "title": "Kokomi - 104 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF1723_Flat_nprobe_1.index",
+    "author": "ArkanDash"
+  }
+}

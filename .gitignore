@@ -371,7 +371,8 @@ monotonic_align/core.c
 
 # data
 /config.json
-/*.pth
+*.pth
+*.index
 *.wav
 /monotonic_align/monotonic_align
 /resources
@@ -384,4 +385,3 @@ monotonic_align/core.c
 .venv
 *.pt
 output
-/weights

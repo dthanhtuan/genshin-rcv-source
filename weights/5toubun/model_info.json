@@ -1,0 +1,10 @@
+{
+  "miku_nakano": {
+    "enable": true,
+    "model_path": "miku_nakano.pth",
+    "title": "Miku Nakano 300 Epochs",
+    "cover": "cover.jpg",
+    "feature_retrieval_library": "added_IVF576_Flat_nprobe_1_My-Voice_v2.index",
+    "author": "voice-models.com"
+  }
+}
