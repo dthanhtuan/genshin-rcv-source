@@ -1,0 +1,34 @@
+{
+  "furina-jp": {
+    "enable": true,
+    "model_path": "furina-jp.pth",
+    "title": "Furina - 275 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF1358_Flat_nprobe_1_furina-jp_v2.index",
+    "author": "ArkanDash"
+  },
+  "neuvillette-jp": {
+    "enable": false,
+    "model_path": "neuvillette-jp.pth",
+    "title": "Neuvillette - 275 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF3903_Flat_nprobe_1_neuvillette-jp_v2.index",
+    "author": "ArkanDash"
+  },
+  "lynette-jp": {
+    "enable": false,
+    "model_path": "lynette-jp.pth",
+    "title": "lynette - 275 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF1810_Flat_nprobe_1_lynette-jp_v2.index",
+    "author": "ArkanDash"
+  },
+  "navia-jp": {
+    "enable": false,
+    "model_path": "navia-jp.pth",
+    "title": "lynette - 275 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF3987_Flat_nprobe_1_navia-jp_v2.index",
+    "author": "ArkanDash"
+  }
+}

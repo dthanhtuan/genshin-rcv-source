@@ -26,6 +26,10 @@ from lib.infer_pack.models import (
 )
 from vc_infer_pipeline import VC
 from config import Config
+
+
+os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'
+
 config = Config()
 logging.getLogger("numba").setLevel(logging.WARNING)
 limitation = os.getenv("SYSTEM") == "spaces"
@@ -166,6 +170,7 @@ def load_model():
     return categories
 
 def cut_vocal_and_inst(url, audio_provider, split_model):
+    demucs_path = "python3 -m demucs"
     if url != "":
         if not os.path.exists("dl_audio"):
             os.mkdir("dl_audio")
@@ -183,12 +188,12 @@ def cut_vocal_and_inst(url, audio_provider, split_model):
                 ydl.download([url])
             audio_path = "dl_audio/youtube_audio.wav"
         if split_model == "htdemucs":
-            command = f"demucs --two-stems=vocals {audio_path} -o output"
+            command = f"{demucs_path}  --two-stems=vocals {audio_path} -o output"
             result = subprocess.run(command.split(), stdout=subprocess.PIPE)
             print(result.stdout.decode())
             return "output/htdemucs/youtube_audio/vocals.wav", "output/htdemucs/youtube_audio/no_vocals.wav", audio_path, "output/htdemucs/youtube_audio/vocals.wav"
         else:
-            command = f"demucs --two-stems=vocals -n mdx_extra_q {audio_path} -o output"
+            command = f"{demucs_path}  --two-stems=vocals -n mdx_extra_q {audio_path} -o output"
             result = subprocess.run(command.split(), stdout=subprocess.PIPE)
             print(result.stdout.decode())
             return "output/mdx_extra_q/youtube_audio/vocals.wav", "output/mdx_extra_q/youtube_audio/no_vocals.wav", audio_path, "output/mdx_extra_q/youtube_audio/vocals.wav"

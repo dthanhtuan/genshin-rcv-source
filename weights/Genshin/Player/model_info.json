@@ -1,0 +1,10 @@
+{
+  "aether-jp": {
+    "enable": true,
+    "model_path": "aether-v2.pth",
+    "title": "Aether - 100 Epochs",
+    "cover": "cover.jpg",
+    "feature_retrieval_library": "added_IVF596_Flat_nprobe_1_aether-v2_v2.index",
+    "author": "ArkanDash"
+  }
+}

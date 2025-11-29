@@ -1,0 +1,50 @@
+{
+  "Liyue": {
+    "enable": true,
+    "title": "Liyue",
+    "folder_path": "Genshin/Liyue",
+    "description": "[![RVC Genshin Impact](https://img.shields.io/badge/%F0%9F%A4%97_Model-RVC_Genshin_Impact-yellow?style=for-the-badge&logo=https%3A%2F%2Fhuggingface.co%2Ffront%2Fassets%2Fhuggingface_logo.svg&logoColor=yellow)](https://huggingface.co/ArkanDash/rvc-genshin-impact)"
+  },
+    "Inazuma": {
+    "enable": false,
+    "title": "Inazuma",
+    "folder_path": "Genshin/Inazuma",
+    "description": "[![RVC Genshin Impact](https://img.shields.io/badge/%F0%9F%A4%97_Model-RVC_Genshin_Impact-yellow?style=for-the-badge&logo=https%3A%2F%2Fhuggingface.co%2Ffront%2Fassets%2Fhuggingface_logo.svg&logoColor=yellow)](https://huggingface.co/ArkanDash/rvc-genshin-impact)"
+  },
+  "Sumeru": {
+    "enable": false,
+    "title": "Sumeru",
+    "folder_path": "Genshin/Sumeru",
+    "description": "[![RVC Genshin Impact](https://img.shields.io/badge/%F0%9F%A4%97_Model-RVC_Genshin_Impact-yellow?style=for-the-badge&logo=https%3A%2F%2Fhuggingface.co%2Ffront%2Fassets%2Fhuggingface_logo.svg&logoColor=yellow)](https://huggingface.co/ArkanDash/rvc-genshin-impact)"
+  },
+  "Player": {
+    "enable": false,
+    "title": "Player",
+    "folder_path": "Genshin/Player",
+    "description": "[![RVC Genshin Impact](https://img.shields.io/badge/%F0%9F%A4%97_Model-RVC_Genshin_Impact-yellow?style=for-the-badge&logo=https%3A%2F%2Fhuggingface.co%2Ffront%2Fassets%2Fhuggingface_logo.svg&logoColor=yellow)](https://huggingface.co/ArkanDash/rvc-genshin-impact)"
+  },
+  "Fontaine": {
+    "enable": false,
+    "title": "Fontaine",
+    "folder_path": "Genshin/Fontaine",
+    "description": "[![RVC Genshin Impact](https://img.shields.io/badge/%F0%9F%A4%97_Model-RVC_Genshin_Impact-yellow?style=for-the-badge&logo=https%3A%2F%2Fhuggingface.co%2Ffront%2Fassets%2Fhuggingface_logo.svg&logoColor=yellow)](https://huggingface.co/ArkanDash/rvc-genshin-impact)"
+  },
+  "Mondstadt": {
+    "enable": false,
+    "title": "Mondstadt",
+    "folder_path": "Genshin/Mondstadt",
+    "description": "[![RVC Genshin Impact](https://img.shields.io/badge/%F0%9F%A4%97_Model-RVC_Genshin_Impact-yellow?style=for-the-badge&logo=https%3A%2F%2Fhuggingface.co%2Ffront%2Fassets%2Fhuggingface_logo.svg&logoColor=yellow)](https://huggingface.co/ArkanDash/rvc-genshin-impact)"
+  },
+    "5toubun": {
+    "enable": true,
+    "title": "5toubun",
+    "folder_path": "5toubun",
+    "description": "5toubun"
+  },
+    "Rezero": {
+    "enable": false,
+    "title": "Rezero",
+    "folder_path": "Rezero",
+    "description": "Rezero"
+  }
+}
