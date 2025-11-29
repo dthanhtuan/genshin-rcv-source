@@ -4,7 +4,39 @@
     "model_path": "miku_nakano.pth",
     "title": "Miku Nakano 300 Epochs",
     "cover": "cover.jpg",
-    "feature_retrieval_library": "added_IVF576_Flat_nprobe_1_My-Voice_v2.index",
+    "feature_retrieval_library": "added_IVF576_Flat_nprobe_1_miku_v2.index",
+    "author": "voice-models.com"
+  },
+    "itsuki_nakano": {
+    "enable": false,
+    "model_path": "Itsuki_200e_2000s.pth",
+    "title": "Itsuki Nakano 300 Epochs",
+    "cover": "cover.jpg",
+    "feature_retrieval_library": "Itsuki.index",
+    "author": "voice-models.com"
+  },
+    "ichika_nakano": {
+    "enable": false,
+    "model_path": "Ichika_nakano.pth",
+    "title": "Ichika Nakano 300 Epochs",
+    "cover": "cover.jpg",
+    "feature_retrieval_library": "added_IVF466_Flat_nprobe_1_Ichika_nakano_v2.index",
+    "author": "voice-models.com"
+  },
+   "yotsuba_nakano": {
+    "enable": false,
+    "model_path": "yotsuba_nakano.pth",
+    "title": "Yotsuba Nakano 300 Epochs",
+    "cover": "cover.jpg",
+    "feature_retrieval_library": "added_IVF354_Flat_nprobe_1_yotsuba_nakano_v2.index",
+    "author": "voice-models.com"
+  },
+     "nino_nakano": {
+    "enable": false,
+    "model_path": "nino_nakano.pth",
+    "title": "nino_nakano 300 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF229_Flat_nprobe_1_nino_nakano_v2",
     "author": "voice-models.com"
   }
 }

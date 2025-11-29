@@ -1,0 +1,10 @@
+{
+  "Emilia": {
+    "enable": true,
+    "model_path": "Emilia_500e_202500s.pth",
+    "title": "Emilia 500 Epochs",
+    "cover": "cover.jpg",
+    "feature_retrieval_library": "added_IVF5014_Flat_nprobe_1_v2.index",
+    "author": "voice-models.com"
+  }
+}

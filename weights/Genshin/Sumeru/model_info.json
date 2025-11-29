@@ -1,0 +1,26 @@
+{
+  "nilou-jp": {
+    "enable": true,
+    "model_path": "nilou-jp.pth",
+    "title": "Nilou - 100 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF4328_Flat_nprobe_1_nilou-jp_v2.index",
+    "author": "ArkanDash"
+  },
+  "kaveh-jp": {
+    "enable": false,
+    "model_path": "kaveh-jp.pth",
+    "title": "Kaveh - 100 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF4967_Flat_nprobe_1_kaveh-jp_v2.index",
+    "author": "ArkanDash"
+  },
+  "alhaitam-jp": {
+    "enable": false,
+    "model_path": "alhaitam-jp.pth",
+    "title": "Alhaitam - 100 Epochs",
+    "cover": "cover.png",
+    "feature_retrieval_library": "added_IVF4618_Flat_nprobe_1_alhaitam-jp_v2.index",
+    "author": "ArkanDash"
+  }
+}
